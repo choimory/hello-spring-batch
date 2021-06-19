@@ -28,7 +28,7 @@
 
 - 하나의 Job에 여러개의 Step을 진행한다
 - 하나의 Step은 하나의 Tasklet 혹은 하나의 [Reader ~ (Processor) ~ Writer]를 진행한다
-- [Reader(조회) ~ Processor(비즈니스 로직) ~ Writer(작성)] 단계 중 Processor 단계는 비즈니스 로직에 따라 생략이 가능하다
+- [Reader(조회) ~ Processor(가공 혹은 처리) ~ Writer(작성)] 단계 중 Processor 단계는 비즈니스 로직에 따라 생략이 가능하다
 - Tasklet과 [Reader ~ Processor ~ Writer]은 하나의 Step에서 같이 진행될 수 없다 (Step 내 둘 중 택일하여 진행한다)
 
 ## Spring batch 메타 데이터 테이블
