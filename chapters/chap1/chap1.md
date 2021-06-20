@@ -21,6 +21,7 @@
 - `tasklet((contribution, chunkContext) -> {로직})`
   - Step 안에서 수행될 기능들을 명시.
   - Step 안에서 단일로 수행될 커스텀한 기능을 선언할때 사용할 수 있음.
+- Job 메소드, Step 메소드명은 다른 `@Configuration`의 메소드들과도 중복되면 안됨
   
 ## Job > Step > [Tasklet] or [Reader ~ (Processor) ~ Writer]
 

@@ -15,24 +15,24 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @RequiredArgsConstructor
 @Slf4j
-public class ChapterTwoConfig {
+public class HelloJobParam {
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
 
     @Bean
-    public Job job(){
+    public Job chapterTwoJob(){
         return jobBuilderFactory.get("chapterTwoJob")
-                .start(step1(null))
+                .start(chapterTwoStep1(null))
                 .build();
     }
 
     @Bean
     @JobScope
-    public Step step1(@Value("#{jobParameters[requestDate]}") String requestDate){
+    public Step chapterTwoStep1(@Value("#{jobParameters[requestDate]}") String requestDate){
         return stepBuilderFactory.get("chapterTwoStep1")
                 .tasklet(((contribution, chunkContext) -> {
-                    log.info("chap2 step1 logging");
-                    log.info("job param : requestDate -> {}", requestDate);
+                    log.info(">> chap2 step1 logging");
+                    log.info(">> job param : requestDate -> {}", requestDate);
                     return RepeatStatus.FINISHED;
                 }))
                 .build();
