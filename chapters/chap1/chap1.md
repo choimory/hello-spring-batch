@@ -4,7 +4,7 @@
 
 ![img.png](img.png)
 
-- Application.java 클래스에 `@EnableBatchProcessing`을 등록하여, 해당 앱을 Batch 어플리케이션으로 사용할 수 있음.
+- Application.java 클래스나 아무 `@Configuration` 관련 클래스에 `@EnableBatchProcessing`을 등록하여, 해당 앱을 Batch 어플리케이션으로 사용할 수 있음.
 
 ## Job 클래스 생성
 

@@ -8,3 +8,6 @@ spring:
     username: abc
     password: abc
     driver-class-name: org.h2.Driver
+#  batch:
+#    job:
+#      names: ${job.name:NONE}
