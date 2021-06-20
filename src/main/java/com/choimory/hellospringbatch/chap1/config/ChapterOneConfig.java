@@ -10,21 +10,21 @@ import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+//@Configuration
 @RequiredArgsConstructor
 @Slf4j
 public class ChapterOneConfig {
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
 
-    @Bean
+    //@Bean
     public Job job(){
         return jobBuilderFactory.get("chapterOneJob")
                                 .start(step1())
                                 .build();
     }
 
-    @Bean
+    //@Bean
     public Step step1(){
         return stepBuilderFactory.get("chapterOneStep1")
                                     .tasklet((contribution, chunkContext) -> {
