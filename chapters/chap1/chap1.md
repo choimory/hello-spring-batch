@@ -1,18 +1,18 @@
 # Chap 1. 
 
-## Batch 어플리케이션 등록
+# Batch 어플리케이션 등록
 
 ![img.png](img.png)
 
 - Application.java 클래스나 아무 `@Configuration` 관련 클래스에 `@EnableBatchProcessing`을 등록하여, 해당 앱을 Batch 어플리케이션으로 사용할 수 있음.
 
-## Job 클래스 생성
+# Job 클래스 생성
 
 ![img_2.png](img_2.png)
     
 - Spring batch의 모든 Job은 `@Configuration`으로 등록해 사용.
 
-## Job, Step 및 이하 로직 생성
+# Job, Step 및 이하 로직 생성
 
 ![img_1.png](img_1.png)
 
@@ -23,7 +23,7 @@
   - Step 안에서 단일로 수행될 커스텀한 기능을 선언할때 사용할 수 있음.
 - Job 메소드, Step 메소드명은 다른 `@Configuration`의 메소드들과도 중복되면 안됨
   
-## Job > Step > [Tasklet] or [Reader ~ (Processor) ~ Writer]
+# Job > Step > [Tasklet] or [Reader ~ (Processor) ~ Writer]
 
 ![img_4.png](img_4.png)
 
@@ -32,7 +32,7 @@
 - [Reader(조회) ~ Processor(가공 혹은 처리) ~ Writer(작성)] 단계 중 Processor 단계는 비즈니스 로직에 따라 생략이 가능하다
 - Tasklet과 [Reader ~ Processor ~ Writer]은 하나의 Step에서 같이 진행될 수 없다 (Step 내 둘 중 택일하여 진행한다)
 
-## Spring batch 메타 데이터 테이블
+# Spring batch 메타 데이터 테이블
 
 ![img_3.png](img_3.png)
 

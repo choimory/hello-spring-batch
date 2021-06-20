@@ -1,6 +1,6 @@
 # Chap 2.
 
-## Spring batch 메타 테이블
+# Spring batch 메타 테이블
 
 - Spring batch 어플리케이션을 실행하기 위해선, 사용되는 DB내에 Spring batch 메타 테이블들이 필수적으로 존재해야 한다
   - H2는 자동생성된다
@@ -13,7 +13,7 @@
 - ![img.png](img.png)
   - 메타테이블 생성 DDL 구문은 DBMS별로 spring-batch-core.jar 내에 존재하여 기본적으로 제공된다
 
-## 메타 테이블 구조
+# 메타 테이블 구조
 
 ![99E033405B66D86909.png](99E033405B66D86909.png)
 
@@ -26,7 +26,7 @@
     - BATCH_STEP_EXECUTION
       - BATCH_STEP_EXECUTION_CONTEXT
   
-## BATCH_JOB_INSTANCE
+# BATCH_JOB_INSTANCE
 
 - Job Parameter에 따라 생성되는 테이블
 - Job Parameter는 Spring batch가 실행될때 외부에서 보낼수 있는 파라미터
@@ -37,16 +37,20 @@
   - 단 해당 Job이 성공했을때의 이야기로, 실패했을땐 동일한 Job을 동일한 Job Param으로 다시 수행을 시도할 수 있다
     - 성공했을때만 Job Instance가 생성되기 때문이다
 
-## BATCH_JOB_EXECUTION
+# BATCH_JOB_EXECUTION
 
 - BATCH_JOB_INSTANCE가 성공/실패했던 모든 내역을 가지고 있는 자식 테이블
 
-## BATCH_JOB_EXECUTION_PARAMS
+# BATCH_JOB_EXECUTION_PARAMS
 
 - BATCH_JOB_EXECUTION이 기록될때 받은 Job Parameter 정보를 가지고 있는 자식 테이블
 
-## Job, Job Instance, Job Execution 정리
+# Job, Job Instance, Job Execution 정리
 
 - Job: `JobBuilderFactory.get()...build()`으로 생성하여 @Bean을 통해 스프링 빈으로 등록한 Spring batch Job
 - Job Instance: 특정 Job Parameter로 실행한 Job
 - Job Execution: 특정 Job Parameter로 실행한 Job의 시도들
+
+# 출처
+
+> https://jojoldu.tistory.com/326?category=902551
