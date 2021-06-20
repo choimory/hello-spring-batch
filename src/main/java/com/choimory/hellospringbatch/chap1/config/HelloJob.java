@@ -10,25 +10,25 @@ import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-//@Configuration
+@Configuration
 @RequiredArgsConstructor
 @Slf4j
-public class ChapterOneConfig {
+public class HelloJob {
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
 
-    //@Bean
-    public Job job(){
+    @Bean
+    public Job chapterOneJob(){
         return jobBuilderFactory.get("chapterOneJob")
-                                .start(step1())
+                                .start(chapterOneStep1())
                                 .build();
     }
 
-    //@Bean
-    public Step step1(){
+    @Bean
+    public Step chapterOneStep1(){
         return stepBuilderFactory.get("chapterOneStep1")
                                     .tasklet((contribution, chunkContext) -> {
-                                        log.info("chapter one, step 1");
+                                        log.info(">> chapter one, step 1");
                                         return RepeatStatus.FINISHED;
                                     })
                                     .build();
