@@ -45,6 +45,8 @@
 
 - BATCH_JOB_EXECUTION이 기록될때 받은 Job Parameter 정보를 가지고 있는 자식 테이블
 
-
 ## Job, Job Instance, Job Execution 정리
 
+- Job: `JobBuilderFactory.get()...build()`으로 생성하여 @Bean을 통해 스프링 빈으로 등록한 Spring batch Job
+- Job Instance: 특정 Job Parameter로 실행한 Job
+- Job Execution: 특정 Job Parameter로 실행한 Job의 시도들
