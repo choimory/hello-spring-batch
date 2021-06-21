@@ -33,7 +33,7 @@
 - Step 작성 
     - `StepBuilderFactory.get("Step명")`
     - Tasklet
-        - `Step.tasklet((contribution, chunkContext) -> { 로직, return RepeatStatus.FINISHED})`
+        - `Step.tasklet((contribution, chunkContext) -> { 로직, return RepeatStatus.CONTINUABLE 혹은 FINISHED})`
     - Chunk
         - ItemReader ~ ItemProcessor ~ ItemWriter
 
