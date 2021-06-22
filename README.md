@@ -63,19 +63,18 @@
 
 - Job Parameters
     - `@Value("#{jobParameters[param명]}")`
-    - Job Param으로 받기 vs 환경 변수, 시스템 변수로 받기
-- Scope
+- @Job|StepScope
+    - Spring Bean 생성 시점을 조정하는 @Job|StepScope
+    - Job Parameter를 받기 위해선 반드시 @Job|StepScope가 필요하다
     - Job의 실행 시점에, Step에 대한 Bean을 생성하는 `@JobScope`
     - Step의 실행 시점에, Tasklet 혹은 Chunk(Reader~Writer)에 대한 Bean을 생성하는 `@StepScope`
+- Job Parameter vs 시스템 변수(application.yml), 환경변수(program args)
 
 ## Chap 5.
 
 - Spring Batch에서 데이터를 처리하는 단위 `Chunk`
     - Chunk 지향 처리
-        - `ChunkOrientedTasklet`
-            - `ItemReader`
-            - `ItemProcessor`
-            - `ItemWriter` 
+        - Chunk 지향 처리의 전체 로직을 다루는 `ChunkOrientedTasklet`
         - Processor와 Writer 로직을 담은 `ChunkProcessor`, `SimpleChunkProcessor`
     - Page Size vs Chunk Size
 
