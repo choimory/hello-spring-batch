@@ -27,15 +27,15 @@
   - `@EnableBatchProcessing`
 - Job 클래스 생성 
   - `@Configuration`
-- [Job] > [Step] > [Tasklet] 혹은 [Reader~Processor~Writer]
+- [Job] > [Step] > [Tasklet] 혹은 [Chunk (Reader~Processor~Writer)]
 - Job 작성 
   - `JobBuilderFactory.get("Job명")`
 - Step 작성 
     - `StepBuilderFactory.get("Step명")`
     - Tasklet
-        - `Step.tasklet((contribution, chunkContext) -> { 로직, return RepeatStatus})`
-    - [Reader ~ Processor ~ Writer]
-    
+        - `Step.tasklet((contribution, chunkContext) -> { 로직, return RepeatStatus.CONTINUABLE 혹은 FINISHED})`
+    - Chunk
+        - ItemReader ~ ItemProcessor ~ ItemWriter
 
 ## Chap 2.
 
@@ -65,8 +65,8 @@
     - `@Value("#{jobParameters[param명]}")`
     - Job Param으로 받기 vs 환경 변수, 시스템 변수로 받기
 - Scope
-    - Job의 실행 시점에 Bean을 생성하는 `@JobScope`
-    - Step의 실행 시점에 Bean을 생성하는 `@StepScope`
+    - Job의 실행 시점에, Step에 대한 Bean을 생성하는 `@JobScope`
+    - Step의 실행 시점에, Tasklet 혹은 Chunk(Reader~Writer)에 대한 Bean을 생성하는 `@StepScope`
 
 ## Chap 5.
 
