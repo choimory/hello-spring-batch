@@ -35,7 +35,7 @@
 - 사용시 Spring batch의 Job Parameter와 관련된 기능들을 사용할 수 없게 됨
     - 이를테면 같은 Job Parameter로 여러 Job Instance를 사용하지 못하게 하는 기능
     - Spring batch 메타 테이블이 관리가 곤란해지는 상태가 된다
-- CLI 외 다른 방법으로 Job을 실행하기 어려워진다 
+- CommandLineRunner 외 다른 방법으로 Job을 실행하기 어려워진다 
 - 테스트코드로 Job을 실행할시 문제가 발생할 수 있다
 - Late Binding을 못하게 된다
     ![img_1.png](img_1.png)
